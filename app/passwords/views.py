@@ -2,8 +2,6 @@
 views for the passwords APIs
 """
 from rest_framework import viewsets
-from rest_framework.response import Response
-from rest_framework import status
 from rest_framework import authentication
 from rest_framework import permissions
 
@@ -28,4 +26,3 @@ class CredentialViewset(viewsets.ModelViewSet):
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
-        

@@ -1,3 +1,6 @@
+"""
+Test for models.
+"""
 from django.test import TestCase
 from django.contrib.auth import get_user_model
 from core import models
@@ -9,8 +12,8 @@ class ModelTests(TestCase):
         email = 'test@example.com'
         password = 'testpass123'
         user = get_user_model().objects.create_user(
-            email = email,
-            password = password,
+            email=email,
+            password=password,
         )
         self.assertEqual(user.email, email)
         self.assertTrue(user.check_password(password))
@@ -46,13 +49,13 @@ class ModelTests(TestCase):
         email = 'test@example.com'
         password = 'testpass123'
         user = get_user_model().objects.create_user(
-            email = email,
-            password = password,
+            email=email,
+            password=password,
         )
         credential = models.LoginCredential.objects.create(
-            user = user,
-            email = 'testsite@example.com',
-            password = 'testpass123',
-            link = 'https://www.example.com',
+            user=user,
+            email='testsite@example.com',
+            password='testpass123',
+            link='https://www.example.com',
         )
         self.assertEqual(str(credential), credential.link)

@@ -2,18 +2,15 @@
 Tests for the passwords API
 """
 from django.urls import reverse
-from django.contrib.auth import get_user_model
 from django.test import TestCase
 
 from rest_framework import status
 from rest_framework.test import APIClient
 
-from core import models
-from passwords import serializers
-
 
 PASSWORDS_LIST_URL = reverse('passwords:credential-list')
 PASSWORDS_DETAILS_URL = reverse('passwords:credential-detail', args=[1])
+
 
 class PublicPasswordsApiTests(TestCase):
     """Test the publicly available passwords API"""

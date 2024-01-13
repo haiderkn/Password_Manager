@@ -1,10 +1,11 @@
 from django.db import models
-from django.contrib.auth.models import(
+from django.contrib.auth.models import (
     AbstractBaseUser,
     BaseUserManager,
     PermissionsMixin,
 )
 from django.conf import settings
+
 
 class UserManager(BaseUserManager):
     """Manager for User """
@@ -45,7 +46,7 @@ class LoginCredential(models.Model):
     """Model for Saving email,password for different links(account)."""
     user = models.ForeignKey(
         settings.AUTH_USER_MODEL,
-        on_delete = models.CASCADE,
+        on_delete=models.CASCADE,
     )
     link = models.CharField(max_length=255)
     email = models.CharField(max_length=255)
