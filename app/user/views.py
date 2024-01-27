@@ -7,6 +7,7 @@ from rest_framework import status, authentication, permissions
 from rest_framework.authtoken.views import ObtainAuthToken
 from rest_framework.settings import api_settings
 
+
 from user.serializers import (
     UserSerializer,
     AuthTokenSerializer,
@@ -14,7 +15,7 @@ from user.serializers import (
 
 
 class CreateUserView(APIView):
-    """Create a new user in the system."""
+    """Please Create a new user in the system."""
 
     serializer_class = UserSerializer
 
@@ -79,3 +80,10 @@ class ManageUserView(APIView):
             serializer.errors,
             status=status.HTTP_400_BAD_REQUEST,
         )
+
+
+class HelloView(APIView):
+    def get(self, request):
+        print("Hello. I am your Password Manager")
+        content = {'message': 'Hello'}
+        return Response(content)

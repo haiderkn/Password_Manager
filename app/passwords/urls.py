@@ -1,7 +1,6 @@
 from django.urls import path
 from passwords.views import CredentialViewset
 
-
 app_name = 'passwords'
 
 urlpatterns = [
