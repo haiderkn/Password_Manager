@@ -80,10 +80,3 @@ class ManageUserView(APIView):
             serializer.errors,
             status=status.HTTP_400_BAD_REQUEST,
         )
-
-
-class HelloView(APIView):
-    def get(self, request):
-        print("Hello. I am your Password Manager")
-        content = {'message': 'Hello'}
-        return Response(content)
