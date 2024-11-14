@@ -1,7 +1,5 @@
 # Password_Manager
-Assalamu alaikum,
-Welcome to the Password_Manager repository! This project is designed to provide a secure and efficient way to manage your passwords on web. This app maintains a monolithic structure.
-
+This project is designed to provide a secure and efficient way to manage your passwords on web. This app maintains a monolithic structure.
 ## Features
 - **user creation**:
 - - **Login with Token**:
